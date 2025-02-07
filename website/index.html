@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <title>MathProject</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    :root {
+      --primary-color: #87CEEB; /* Sky blue */
+      --secondary-color: #ffffff; /* White */
+    }
+
+    body {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      perspective: 1000px;
+    }
+
+    .wrapper {
+      transform-style: preserve-3d;
+    }
+
+    .section {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 2rem 0;
+      transform: translateZ(20px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .graphs__container, .table__container {
+      display: grid;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .graph__item {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .graph__item:hover {
+      transform: translateZ(30px) scale(1.05);
+    }
+
+    .graph__image {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .header {
+      background: var(--primary-color);
+      padding: 1rem 0;
+    }
+
+    .menu__link {
+      color: var(--secondary-color);
+    }
+
+    .main__welcome-image {
+      margin: 2rem auto;
+      max-width: 600px;
+      perspective: 1000px;
+      transform-style: preserve-3d;
+    }
+
+    .welcome-3d {
+      width: 100%;
+      height: auto;
+      transition: transform 0.6s ease-in-out;
+      transform: translateZ(0);
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .main__welcome-image:hover .welcome-3d {
+      transform: translateZ(50px) rotateX(5deg) rotateY(5deg);
+      box-shadow: 20px 20px 30px rgba(0,0,0,0.2);
+    }
+
+    .main__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    /* Add styles for audio controls */
+    .audio-controls {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: rgba(135, 206, 235, 0.9); /* Sky blue with transparency */
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .audio-controls audio {
+      height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="audio-controls">
+    <audio id="background-audio" controls loop>
+      <source src="voice/ElevenLabs_2025-02-06T12_03_37_Alice_pre_s50_sb84_se0_b_m2.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__container">
+        <a href="index.html" class="header__logo logo">MathProject</a>
+        <div class="header__navigation">
+          <div class="header__menu menu">
+            <nav class="menu__body">
+              <ul class="menu__list">
+                <li class="menu__item"><a href="#graphs" class="menu__link">Graphs</a></li>
+                <li class="menu__item"><a href="#table" class="menu__link">Table</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="page">
+      <section class="page__main main">
+        <div class="main__container">
+          <h1 class="main__title">MathProject</h1>
+          <div class="main__text">
+            Interactive 3D visualization of mathematical data and statistics
+          </div>
+          <div class="main__welcome-image">
+            <img src="images/welcome.png" alt="Welcome" class="welcome-3d" />
+          </div>
+        </div>
+      </section>
+
+      <section id="graphs" class="section graphs">
+        <div class="graphs__container">
+          <h2 class="graphs__title title">Graphs</h2>
+          <div class="graphs__content">
+            <!-- Graph 1 -->
+            <div class="graph__item">
+              <div class="graph__image">
+                <img src="images/Picture1.png" alt="Statistical Graph 1" />
+              </div>
+              <div class="graph__description">
+                <h3>Tamil Nadu Sector Analysis</h3>
+                <p>Comparison of different sectors including Electronics, Automobile, Petroleum, and Agriculture showing growth from 2020 to 2025</p>
+              </div>
+            </div>
+
+            <!-- Graph 2 -->
+            <div class="graph__item">
+              <div class="graph__image">
+                <img src="images/Picture2.png" alt="Statistical Graph 2" />
+              </div>
+              <div class="graph__description">
+                <h3>Maharashtra Sector Analysis</h3>
+                <p>Comparison of different sectors including Electronics, Automobile, Petroleum, and Agriculture showing growth from 2020 to 2025</p>
+              </div>
+            </div>
+
+            <!-- Graph 3 -->
+            <div class="graph__item">
+              <div class="graph__image">
+                <img src="images/Picture3.png" alt="Statistical Graph 3" />
+              </div>
+              <div class="graph__description">
+                <h3>Gujarat's Sector Analysis</h3>
+                <p>Comparison of different sectors including Electronics, Automobile, Petroleum, and Agriculture showing growth from 2020 to 2025</p>
+              </div>
+            </div>
+
+            <!-- Graph 4 -->
+            <div class="graph__item">
+              <div class="graph__image">
+                <img src="images/Picture4.png" alt="Statistical Graph 4" />
+              </div>
+              <div class="graph__description">
+                <h3>Karnataka Sector Analysis</h3>
+                <p>Comparison of different sectors including Electronics, Automobile, Petroleum, and Agriculture showing growth from 2020 to 2025</p>
+              </div>
+            </div>
+
+            <!-- Graph 5 -->
+            <div class="graph__item">
+              <div class="graph__image">
+                <img src="images/Picture5.png" alt="Statistical Graph 5" />
+              </div>
+              <div class="graph__description">
+                <h3>Uttar Pradesh Sector Analysis</h3>
+                <p>Comparison of different sectors including Electronics, Automobile, Petroleum, and Agriculture showing growth from 2020 to 2025</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Add this section between graphs and table sections -->
+      <section class="section about-project">
+        <div class="about-project__container">
+          <h2 class="about-project__title title">About Our Project</h2>
+          <div class="about-project__content">
+            <div class="about-project__text">
+              <p>Welcome to our comprehensive analysis of India's major state economies. This project provides detailed insights into the growth trajectories of five key states: Tamil Nadu, Maharashtra, Gujarat, Karnataka, and Uttar Pradesh, focusing on their industrial and economic development from 2020 to 2025.</p>
+              
+              <p>Our interactive visualization platform presents sector-wise analysis across Electronics, Automobile, Petroleum, and Agriculture industries. Through detailed graphs and data tables, we showcase:</p>
+              
+              <ul class="about-project__list">
+                <li>Current growth rates and future projections</li>
+                <li>Sector-specific opportunities and challenges</li>
+                <li>Comparative analysis across different states</li>
+                <li>Economic indicators and development metrics</li>
+              </ul>
+              
+              <p>This data-driven approach helps stakeholders, investors, and policy makers understand the economic landscape and make informed decisions for future investments and policy formulation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="table" class="section table">
+        <div class="table__container">
+          <h2 class="table__title title">Growth Analysis & Projections</h2>
+          <div class="table__content">
+            <table>
+              <thead>
+                <tr>
+                  <th>Sector</th>
+                  <th>Average Growth Rate (2020–2025)</th>
+                  <th>Projected Growth (2026–2035)</th>
+                  <th>Key Opportunities</th>
+                  <th>Potential Challenges</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Electronics</td>
+                  <td>53.6%</td>
+                  <td>500–600%</td>
+                  <td>Expansion of semiconductor manufacturing, increased FDI, and digital transformation.</td>
+                  <td>Global supply chain disruptions, reliance on imports for raw materials.</td>
+                </tr>
+                <tr>
+                  <td>Automobile</td>
+                  <td>24.6%</td>
+                  <td>200–250%</td>
+                  <td>Shift to electric vehicles (EVs), government incentives, and rising consumer demand.</td>
+                  <td>High competition, infrastructure gaps for EV charging stations.</td>
+                </tr>
+                <tr>
+                  <td>Petroleum</td>
+                  <td>24.4%</td>
+                  <td>200–250%</td>
+                  <td>Exploration of new oil fields, refinery expansions, and renewable energy integration.</td>
+                  <td>Volatile global oil prices, environmental concerns.</td>
+                </tr>
+                <tr>
+                  <td>Agriculture</td>
+                  <td>13.3%</td>
+                  <td>100–150%</td>
+                  <td>Adoption of precision farming, government subsidies, and export opportunities.</td>
+                  <td>Climate change, water scarcity, and lack of modern technology adoption in rural areas.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__copyright">Copyright © 2025 <MathProject>
+        <Orhav></Orhav> – All Rights Reserved</div>
+      </div>
+    </footer>
+  </div>
+  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const audio = document.getElementById('background-audio');
+      
+      // Add play/pause functionality
+      audio.volume = 0.5; // Set initial volume to 50%
+      
+      // Auto-play on user interaction (to comply with browser policies)
+      document.addEventListener('click', function() {
+        if (audio.paused) {
+          audio.play().catch(function(error) {
+            console.log("Audio play failed:", error);
+          });
+        }
+      }, { once: true });
+    });
+  </script>
+</body>
+
+</html>
